@@ -55,7 +55,7 @@
              <%= link_to 'Home', root_path %>
           </li>
           <li>
-             <%= link_to 'Store', root_path %>
+             <%= link_to 'Store', shop_path %>
           </li>
           <li>
              <%= link_to 'About', root_path %>
@@ -66,9 +66,17 @@
              <% end %>
           </li>
           <li>
-             <%= link_to root_path class: 'menu-cart' do %>
-               <i class="fa fa-shopping-plane"></i> $0.00
-             <% end %>
+            <% if @cart.total_price > 0 %>
+              <%= link_to @cart, class: 'menu-cart' do %>
+                <i class="fa fa-shopping-plane"></i>
+                <%= number_to_currency @cart.total_price %>
+              <% end %>
+            <% else %>
+              <%= link_to @cart, class: 'menu-cart' do %>
+                <i class="fa fa-shopping-plane"></i>
+                $ 0.00
+              <% end %>
+            <% end %>
           </li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
