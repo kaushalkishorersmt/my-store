@@ -4,11 +4,19 @@
     <title>MyStore</title>
     <%= csrf_meta_tags %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag'http://fonts.googleapis.com/css?family=Raleway:400,700,600,500,300' %>
+
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
-    <%= yield %>
+
+    <%= render 'shared/header'%>
+		<div class="main-container">
+      <%= yield %>
+      <%= render 'shared/footer'%>
+		</div><!-- /.main-container -->
+    
   </body>
 </html>
