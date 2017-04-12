@@ -7,7 +7,6 @@ class ProductItemsController < ApplicationController
   def create
     product = Product.find(params[:product_id])
     @product_item = @cart.add_product(product.id)
-
     if @product_item.save
       redirect_to shop_url, notice: 'Product added to Cart'
     else
@@ -21,7 +20,7 @@ class ProductItemsController < ApplicationController
     @product_item = ProductItem.find(params[:id])
   end
 
-  def prduct_item_params
+  def product_item_params
     params.require(:product_item).permit(:product_id)
   end
 
