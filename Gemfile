@@ -18,6 +18,12 @@ gem 'font-awesome-rails'
 gem 'paperclip'
 gem 'activeadmin', github: 'activeadmin'
 gem 'devise'
+gem 'bootstrap-sass'
+gem 'toastr-rails'
+gem 'braintree'
+gem "figaro"
+gem 'country_select'
+
 
 group :development, :test do
   gem 'byebug', platform: :mri
@@ -34,6 +40,3 @@ group :development do
   gem 'spring-watcher-listen', '~> 2.0.0'
 end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
-
-gem 'bootstrap-sass'
-gem 'toastr-rails'
