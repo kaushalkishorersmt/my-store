@@ -84,6 +84,12 @@ Rails.application.configure do
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
 
+  # Dont actually send
+  config.action_mailer.delivery_method = :test
+
+  config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+
+
   Braintree::Configuration.environment = :sandbox
   Braintree::Configuration.merchant_id = ENV['merchant_id']
   Braintree::Configuration.public_key = ENV['public_key']
